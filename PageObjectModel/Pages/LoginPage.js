@@ -3,13 +3,13 @@ import { Selector, t } from 'testcafe'
 
 class LoginPage {
     constructor(){
-        this.TxtUser = Selector('input[name="login.username"]')
-        this.TxtPassword = Selector('input[name="login.password"]')
-        this.BtnLogin = Selector('.btn-primary.button-login')
-        this.ErrorMessage = Selector('#login-error-message')
+        this.TxtUser = Selector('#user-name')
+        this.TxtPassword = Selector('#password')
+        this.BtnLogin = Selector('#login-button')
+        this.ErrorMessage = Selector('[data-test="error"]')
     }
 
-    async SubtmitLoginForm(username, password){
+    async LoginSubmit(username, password){
         
         await t.typeText(this.TxtUser, username, {paste:true})
         await t.typeText(this.TxtPassword, password,{paste:true})

@@ -1,22 +1,22 @@
-import WelcomePage from '../Pages/WelcomePage'
 import LoginPage from '../Pages/LoginPage'
-import MyNotesPage from '../Pages/MyNotesPage'
+import InventoryPage from '../Pages/InventoryPage'
 import {CREDENTIALS} from '../Data/Constant'
 
 fixture('Login feature testing')
-    .page `http://testapp.galenframework.com/`
+    .page `https://www.saucedemo.com/`
     .beforeEach(async t=> {
-        await t.click(WelcomePage.BtnLogin)
+        
     })
 
     test('User Login Valid', async t => {
 
-        await LoginPage.SubtmitLoginForm(CREDENTIALS.VALID_USER.USERNAME, CREDENTIALS.VALID_USER.PASSWORD);
-        await t.expect(MyNotesPage.BtnAddNote.exists).ok();
+        await LoginPage.LoginSubmit(CREDENTIALS.VALID_USER.USERNAME, CREDENTIALS.VALID_USER.PASSWORD);
+        await t.expect(InventoryPage.BtnCart.exists).ok();
     })   
     
     test('User Login Invalid', async t => {
-        await LoginPage.SubtmitLoginForm(CREDENTIALS.INVALID_USER.USERNAME, CREDENTIALS.INVALID_USER.PASSWORD);    
+        await LoginPage.LoginSubmit(CREDENTIALS.INVALID_USER.USERNAME, CREDENTIALS.INVALID_USER.PASSWORD);    
         await t.expect(LoginPage.ErrorMessage.exists).ok();
-        await t.expect(LoginPage.ErrorMessage.innerText).eql('The username or password are incorrect');
-    })
+        await t.expect(LoginPage.ErrorMessage.innerText).eql('Epic sadface: Username and password do not match any user in this service');
+    })   
+    
