@@ -4,7 +4,7 @@ import {CREDENTIALS} from '../Data/Constant'
 import SideBarPage from '../Pages/SideBarPage'
 import ShoppingCartPage from '../Pages/ShoppingCartPage'
 
-fixture.only('Login feature testing')
+fixture('Login feature testing')
     .page `https://www.saucedemo.com/`
     .beforeEach(async t=> {
         

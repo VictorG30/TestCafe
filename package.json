@@ -9,6 +9,8 @@
   "author": "Victor Garcia",
   "license": "ISC",
   "dependencies": {
+    "testcafe": "*",
     "dotenv": "^8.2.0"
   }
+  
 }
