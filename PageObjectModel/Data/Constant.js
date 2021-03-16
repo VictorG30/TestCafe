@@ -11,3 +11,11 @@ export const CREDENTIALS = {
         PASSWORD:'INVALID'
     }
 }
+
+export const USERDATA = {
+    USER:{
+        Name:'Victor',
+        LastName:'Garcia',
+        Zip:'78570'
+    }
+    }

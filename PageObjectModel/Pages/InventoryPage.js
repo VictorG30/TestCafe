@@ -21,14 +21,37 @@ class InventoryPage{
     
     async AddAllElements(){
         
+        let lista=new Array();
+        
         const Items = await Selector('.btn_inventory'); 
+        const ItemsTxt = await Selector('.inventory_item_price'); 
+        
         const count = await Items.count;
 
             for(let i=0; i<count; i++){ 
             await t.click(Items.nth(i)); 
+            lista.push(await ItemsTxt.nth(i).innerText);
+
             }
             
+            return lista;
     }    
+
+    async GetElementsText(){
+        
+        let lista=new Array();
+        
+        const ItemsTxt = await Selector('.inventory_item_price'); 
+        const count = await ItemsTxt.count;
+
+            for(let i=0; i<count; i++){ 
+            lista.push(await ItemsTxt.nth(i).innerText);
+
+            }
+            
+            return lista;
+    }    
+
     
     async CountElements(){
         

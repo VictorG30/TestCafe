@@ -5,9 +5,7 @@ import SideBarPage from '../Pages/SideBarPage'
 
 fixture('Login feature testing')
     .page `https://www.saucedemo.com/`
-    .beforeEach(async t=> {
-        
-    })
+
 
     test('Login User Valid', async t => {
 

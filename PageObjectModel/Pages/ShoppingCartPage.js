@@ -5,7 +5,11 @@ class ShoppingCartPage{
         this.BtnCheckout = Selector('.btn_action.checkout_button')
 
     }
-
+    async GoToCheckOut(){
+        
+        await t.click(this.BtnCheckout)
+     
+    }
 
 }
 

@@ -6,7 +6,7 @@ import ShoppingCartPage from '../Pages/ShoppingCartPage'
 import { Selector, t } from 'testcafe'
 
 
-fixture.only('Login feature testing')
+fixture('Shopping cart feature testing')
     .page `https://www.saucedemo.com/`
     .beforeEach(async t=> {
         await LoginPage.LoginSubmit(CREDENTIALS.VALID_USER.USERNAME, CREDENTIALS.VALID_USER.PASSWORD);
@@ -20,6 +20,7 @@ fixture.only('Login feature testing')
         await t.expect(ShoppingCartPage.BtnCheckout.exists).ok();
 
     })     
+    
     
     test('Add item to shopping cart', async t => {
            
@@ -43,5 +44,4 @@ fixture.only('Login feature testing')
         await t.expect(InventoryPage.BadgeCart.innerText).eql(bar);
         await t.expect(ShoppingCartPage.BtnCheckout.exists).ok();
 
-    })   
-    
+    }) 
