@@ -4,8 +4,11 @@
   "description": "Test cafe project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test-all-chrome": "testcafe chrome ./PageObjectModel/Tests"
   },
   "author": "Victor Garcia",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  }
 }

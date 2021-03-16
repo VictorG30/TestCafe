@@ -1,4 +1,5 @@
-import { Selector } from 'testcafe'
+import { Selector, t } from 'testcafe'
+
 
 class LoginPage {
     constructor(){
@@ -7,6 +8,14 @@ class LoginPage {
         this.BtnLogin = Selector('.btn-primary.button-login')
         this.ErrorMessage = Selector('#login-error-message')
     }
+
+    async SubtmitLoginForm(username, password){
+        
+        await t.typeText(this.TxtUser, username, {paste:true})
+        await t.typeText(this.TxtPassword, password,{paste:true})
+        await t.click(this.BtnLogin)
+    }
+
 }
 
 export default new LoginPage()
