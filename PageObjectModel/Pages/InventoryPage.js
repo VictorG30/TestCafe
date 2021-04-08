@@ -2,7 +2,7 @@ import { Selector, t } from 'testcafe'
 
 class InventoryPage{
     constructor(){
-        this.BtnCart = Selector('.shopping_cart_link.fa-layers')
+        this.BtnCart = Selector('.shopping_cart_link')
         this.BadgeCart = Selector('.shopping_cart_badge')
     }
 
