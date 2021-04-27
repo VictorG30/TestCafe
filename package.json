@@ -4,7 +4,7 @@
   "description": "Test cafe project",
   "main": "index.js",
   "scripts": {
-    "test-all-multibrowsers": "testcafe chrome ./PageObjectModel/Tests"
+    "test": "testcafe chrome ./PageObjectModel/Tests"
   },
   "author": "Victor Garcia",
   "license": "ISC",
